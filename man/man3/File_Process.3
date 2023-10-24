@@ -1,0 +1,101 @@
+.TH "File_Process" 3 "2023年 十月 23日 星期一" "Version 1.0.0" "miniRBT" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+File_Process
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <rbt_variable\&.h>\fP
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBFile_Process\fP ()"
+.br
+.ti -1c
+.RI "\fB~File_Process\fP ()"
+.br
+.ti -1c
+.RI "void \fBopen_file\fP (QString _file_name)"
+.br
+.ti -1c
+.RI "void \fBrbt_init\fP ()"
+.br
+.ti -1c
+.RI "void \fBrbt_finish\fP ()"
+.br
+.ti -1c
+.RI "void \fBread_file\fP ()"
+.br
+.ti -1c
+.RI "void \fBwrite_file\fP ()"
+.br
+.in -1c
+.SS "Public 属性"
+
+.in +1c
+.ti -1c
+.RI "QString \fBfile_address\fP"
+.br
+.in -1c
+.SS "Private 成员函数"
+
+.in +1c
+.ti -1c
+.RI "void \fBanalysis\fP (QString line_data)"
+.br
+.in -1c
+.SS "Private 属性"
+
+.in +1c
+.ti -1c
+.RI "QFile * \fBqfile\fP"
+.br
+.ti -1c
+.RI "QStringList \fBfile_name\fP"
+.br
+.ti -1c
+.RI "size_t \fBfile_number\fP"
+.br
+.ti -1c
+.RI "QStringList \fBstr_list_temp\fP"
+.br
+.in -1c
+.SH "构造及析构函数说明"
+.PP 
+.SS "File_Process::File_Process ()"
+
+.SS "File_Process::~File_Process ()\fC [inline]\fP"
+
+.SH "成员函数说明"
+.PP 
+.SS "void File_Process::analysis (QString line_data)\fC [private]\fP"
+
+.SS "void File_Process::open_file (QString _file_name)"
+
+.SS "void File_Process::rbt_finish ()"
+
+.SS "void File_Process::rbt_init ()"
+
+.SS "void File_Process::read_file ()"
+
+.SS "void File_Process::write_file ()"
+
+.SH "类成员变量说明"
+.PP 
+.SS "QString File_Process::file_address"
+
+.SS "QStringList File_Process::file_name\fC [private]\fP"
+
+.SS "size_t File_Process::file_number\fC [private]\fP"
+
+.SS "QFile* File_Process::qfile\fC [private]\fP"
+
+.SS "QStringList File_Process::str_list_temp\fC [private]\fP"
+
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 miniRBT 的 源代码自动生成\&.

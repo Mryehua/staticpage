@@ -1,0 +1,46 @@
+.TH "DH_Parameter" 3 "2023年 十月 23日 星期一" "Version 1.0.0" "miniRBT" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DH_Parameter \- kin & dyn model  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <rbt_model\&.h>\fP
+.SS "Public 属性"
+
+.in +1c
+.ti -1c
+.RI "double \fBd\fP"
+.br
+.ti -1c
+.RI "double \fBa\fP"
+.br
+.ti -1c
+.RI "double \fBalpha\fP"
+.br
+.ti -1c
+.RI "bool \fBjoint_type\fP"
+.br
+.in -1c
+.SH "详细描述"
+.PP 
+kin & dyn model 
+
+机械臂单个连杆的DH参数结构体 
+.SH "类成员变量说明"
+.PP 
+.SS "double DH_Parameter::a"
+连杆长度 
+.SS "double DH_Parameter::alpha"
+连杆扭转角(弧度) 
+.SS "double DH_Parameter::d"
+连杆偏置 
+.SS "bool DH_Parameter::joint_type"
+关节运动类型，false:旋转，true:平移关节 
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 miniRBT 的 源代码自动生成\&.
