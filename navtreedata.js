@@ -24,6 +24,10 @@ var NAVTREE =
 [
   [ "miniRBT", "index.html", [
     [ "命名空间", "namespaces.html", [
+      [ "1、Overview", "index.html#autotoc_md0", null ],
+      [ "2、Download & Install", "index.html#autotoc_md1", null ],
+      [ "3、Contributing to miniRBT", "index.html#autotoc_md2", null ],
+      [ "4、End", "index.html#autotoc_md3", null ],
       [ "命名空间列表", "namespaces.html", "namespaces_dup" ]
     ] ],
     [ "类", "annotated.html", [
