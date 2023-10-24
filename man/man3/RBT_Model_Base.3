@@ -1,0 +1,122 @@
+.TH "RBT::Model_Base" 3 "2023年 十月 24日 星期二" "Version 1.0.0" "miniRBT" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RBT::Model_Base \- 机械臂运动学和动力学的基类，包含了一些位姿变换的计算  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <rbt_model\&.h>\fP
+.PP
+被 \fBRBT::Rbt_Model\fP 继承\&.
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBModel_Base\fP ()"
+.br
+.ti -1c
+.RI "Eigen::Matrix4d \fBrotx\fP (double _deg)"
+.br
+.RI "绕X轴旋转 "
+.ti -1c
+.RI "Eigen::Matrix4d \fBroty\fP (double _deg)"
+.br
+.RI "绕Y轴旋转 "
+.ti -1c
+.RI "Eigen::Matrix4d \fBrotz\fP (double _deg)"
+.br
+.RI "绕Z轴旋转 "
+.ti -1c
+.RI "Eigen::Matrix4d \fBtranslate\fP (double _distance_x, double _distance_y, double _distance_z)"
+.br
+.RI "平移变换 "
+.ti -1c
+.RI "Eigen::Matrix4d \fBmdh\fP (double _theta, double _d, double _a, double _alpha)"
+.br
+.RI "机械臂MDH建模方式 "
+.ti -1c
+.RI "Eigen::Matrix4d \fBsdh\fP (double _theta, double _d, double _a, double _alpha)"
+.br
+.RI "机械臂SDH建模方式 "
+.ti -1c
+.RI "virtual Eigen::Matrix4d \fBfkine\fP (std::array< double, freedom > _theta)"
+.br
+.RI "机械臂运动学正解 "
+.ti -1c
+.RI "virtual bool \fBikine\fP (Eigen::Matrix4d _end_pos_rot)"
+.br
+.RI "机械臂运动学逆解 "
+.ti -1c
+.RI "virtual std::array< double, freedom > \fBchoice\fP ()"
+.br
+.RI "机械臂逆解后的择优计算 "
+.in -1c
+.SS "Private 属性"
+
+.in +1c
+.ti -1c
+.RI "Eigen::Matrix4d \fBmatrix_temp\fP"
+.br
+.in -1c
+.SH "详细描述"
+.PP 
+机械臂运动学和动力学的基类，包含了一些位姿变换的计算 
+.SH "构造及析构函数说明"
+.PP 
+.SS "RBT::Model_Base::Model_Base ()"
+
+.SH "成员函数说明"
+.PP 
+.SS "virtual std::array<double,freedom> RBT::Model_Base::choice ()\fC [virtual]\fP"
+
+.PP
+机械臂逆解后的择优计算 
+.PP
+被 \fBRBT::Rbt_Model\fP 重载\&.
+.SS "virtual Eigen::Matrix4d RBT::Model_Base::fkine (std::array< double, freedom > _theta)\fC [virtual]\fP"
+
+.PP
+机械臂运动学正解 
+.PP
+被 \fBRBT::Rbt_Model\fP 重载\&.
+.SS "virtual bool RBT::Model_Base::ikine (Eigen::Matrix4d _end_pos_rot)\fC [virtual]\fP"
+
+.PP
+机械臂运动学逆解 
+.PP
+被 \fBRBT::Rbt_Model\fP 重载\&.
+.SS "Eigen::Matrix4d RBT::Model_Base::mdh (double _theta, double _d, double _a, double _alpha)"
+
+.PP
+机械臂MDH建模方式 
+.SS "Eigen::Matrix4d RBT::Model_Base::rotx (double _deg)"
+
+.PP
+绕X轴旋转 
+.SS "Eigen::Matrix4d RBT::Model_Base::roty (double _deg)"
+
+.PP
+绕Y轴旋转 
+.SS "Eigen::Matrix4d RBT::Model_Base::rotz (double _deg)"
+
+.PP
+绕Z轴旋转 
+.SS "Eigen::Matrix4d RBT::Model_Base::sdh (double _theta, double _d, double _a, double _alpha)"
+
+.PP
+机械臂SDH建模方式 
+.SS "Eigen::Matrix4d RBT::Model_Base::translate (double _distance_x, double _distance_y, double _distance_z)"
+
+.PP
+平移变换 
+.SH "类成员变量说明"
+.PP 
+.SS "Eigen::Matrix4d RBT::Model_Base::matrix_temp\fC [private]\fP"
+
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 miniRBT 的 源代码自动生成\&.

@@ -1,0 +1,127 @@
+.TH "RBT::Rbt_Model" 3 "2023年 十月 24日 星期二" "Version 1.0.0" "miniRBT" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RBT::Rbt_Model \- 机械臂运动学类，包含了一些位姿变换的计算，继承于Model_Base  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <rbt_model\&.h>\fP
+.PP
+继承自 QObject , 以及 \fBRBT::Model_Base\fP \&.
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBRbt_Model\fP (QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "void \fBpritnf_result\fP ()"
+.br
+.RI "打印多组逆解 "
+.ti -1c
+.RI "Eigen::Matrix4d \fBfkine\fP (std::array< double, freedom > _theta)"
+.br
+.RI "运动学正解 "
+.ti -1c
+.RI "bool \fBikine\fP (Eigen::Matrix4d _end_pos_rot)"
+.br
+.RI "打印多组逆解 "
+.ti -1c
+.RI "std::array< double, freedom > \fBchoice\fP ()"
+.br
+.RI "多组逆解的择优计算 "
+.ti -1c
+.RI "std::array< double, freedom > \fBdyn_backward\fP (std::array< double, freedom > _q, std::array< double, freedom > _dq, std::array< double, freedom > _ddq)"
+.br
+.RI "动力学逆解 "
+.ti -1c
+.RI "std::array< double, freedom > \fBdyn_get_accel\fP (std::array< double, freedom > _torque, std::array< double, freedom > _q, std::array< double, freedom > _dq)"
+.br
+.RI "动力学正解的部分函数，计算加速度 "
+.in -1c
+.SS "Public 属性"
+
+.in +1c
+.ti -1c
+.RI "std::array< struct \fBDH_Parameter\fP, freedom > \fBrbt_dh\fP"
+.br
+.ti -1c
+.RI "bool \fBmodel_type\fP"
+.br
+.ti -1c
+.RI "Eigen::Matrix< double, 4, 6 > \fBresult\fP"
+.br
+.ti -1c
+.RI "std::array< double, freedom > \fBoffset\fP"
+.br
+.ti -1c
+.RI "std::array< double, freedom > \fBlast_joint_value\fP"
+.br
+.in -1c
+.SS "Private 属性"
+
+.in +1c
+.ti -1c
+.RI "Eigen::Matrix4d \fBmatrix_temp\fP"
+.br
+.in -1c
+.SH "详细描述"
+.PP 
+机械臂运动学类，包含了一些位姿变换的计算，继承于Model_Base 
+.SH "构造及析构函数说明"
+.PP 
+.SS "RBT::Rbt_Model::Rbt_Model (QObject * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.SH "成员函数说明"
+.PP 
+.SS "std::array<double,freedom> RBT::Rbt_Model::choice ()\fC [virtual]\fP"
+
+.PP
+多组逆解的择优计算 
+.PP
+重载 \fBRBT::Model_Base\fP \&.
+.SS "std::array<double,freedom> RBT::Rbt_Model::dyn_backward (std::array< double, freedom > _q, std::array< double, freedom > _dq, std::array< double, freedom > _ddq)"
+
+.PP
+动力学逆解 
+.SS "std::array<double,freedom> RBT::Rbt_Model::dyn_get_accel (std::array< double, freedom > _torque, std::array< double, freedom > _q, std::array< double, freedom > _dq)"
+
+.PP
+动力学正解的部分函数，计算加速度 
+.SS "Eigen::Matrix4d RBT::Rbt_Model::fkine (std::array< double, freedom > _theta)\fC [virtual]\fP"
+
+.PP
+运动学正解 
+.PP
+重载 \fBRBT::Model_Base\fP \&.
+.SS "bool RBT::Rbt_Model::ikine (Eigen::Matrix4d _end_pos_rot)\fC [virtual]\fP"
+
+.PP
+打印多组逆解 
+.PP
+重载 \fBRBT::Model_Base\fP \&.
+.SS "void RBT::Rbt_Model::pritnf_result ()"
+
+.PP
+打印多组逆解 
+.SH "类成员变量说明"
+.PP 
+.SS "std::array<double,freedom> RBT::Rbt_Model::last_joint_value"
+上一次逆解择优的结果 
+.SS "Eigen::Matrix4d RBT::Rbt_Model::matrix_temp\fC [private]\fP"
+
+.SS "bool RBT::Rbt_Model::model_type"
+\&.\&.\&. 
+.SS "std::array<double,freedom> RBT::Rbt_Model::offset"
+关节角度偏置 
+.SS "std::array<struct \fBDH_Parameter\fP,freedom> RBT::Rbt_Model::rbt_dh"
+机械臂DH参数表 
+.SS "Eigen::Matrix<double,4,6> RBT::Rbt_Model::result"
+运动学逆解后的多组解 
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 miniRBT 的 源代码自动生成\&.

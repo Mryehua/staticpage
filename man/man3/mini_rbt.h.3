@@ -1,0 +1,125 @@
+.TH "include/mini_rbt.h" 3 "2023年 十月 24日 星期二" "Version 1.0.0" "miniRBT" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/mini_rbt.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <pthread\&.h>\fP
+.br
+\fC#include <QList>\fP
+.br
+\fC#include <QFile>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <limits\&.h>\fP
+.br
+\fC#include <sched\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <sys/mman\&.h>\fP
+.br
+\fC#include 'rbt_ethercat\&.h'\fP
+.br
+\fC#include 'rbt_variable\&.h'\fP
+.br
+\fC#include 'rbt_model\&.h'\fP
+.br
+
+.SS "类"
+
+.in +1c
+.ti -1c
+.RI "class \fBRBT::mini_rbt\fP"
+.br
+.RI "机械臂多线程的入口函数 "
+.ti -1c
+.RI "class \fBRBT::Interface\fP"
+.br
+.RI "communicate between front-end and back-end "
+.in -1c
+.SS "命名空间"
+
+.in +1c
+.ti -1c
+.RI " \fBRBT\fP"
+.br
+.in -1c
+.SS "函数"
+
+.in +1c
+.ti -1c
+.RI "void * \fBecrt_task\fP (void *arg)"
+.br
+.RI "ethercat通信线程，主要负责主站与从站之间的通信 "
+.ti -1c
+.RI "void * \fBtraj_task\fP (void *arg)"
+.br
+.RI "轨迹规划线程，主要负责空间曲线的规划 "
+.ti -1c
+.RI "void * \fBkin_task\fP (void *arg)"
+.br
+.RI "关于运动学计算的线程，主要负责运动学方面的计算以及轨迹的插值 "
+.in -1c
+.SS "变量"
+
+.in +1c
+.ti -1c
+.RI "pthread_mutex_t \fBecrt_mutex\fP"
+.br
+.ti -1c
+.RI "pthread_mutex_t \fBtraj_mutex\fP"
+.br
+.ti -1c
+.RI "pthread_mutex_t \fBkin_mutex\fP"
+.br
+.ti -1c
+.RI "pthread_cond_t \fBtraj_cond\fP"
+.br
+.ti -1c
+.RI "\fBRBT::Ethercat\fP * \fBmini_ecrt\fP"
+.br
+.ti -1c
+.RI "\fBRBT::Rbt_Model\fP * \fBkinematic\fP"
+.br
+.in -1c
+.SH "函数说明"
+.PP 
+.SS "void* ecrt_task (void * arg)"
+
+.PP
+ethercat通信线程，主要负责主站与从站之间的通信 
+.SS "void* kin_task (void * arg)"
+
+.PP
+关于运动学计算的线程，主要负责运动学方面的计算以及轨迹的插值 
+.SS "void* traj_task (void * arg)"
+
+.PP
+轨迹规划线程，主要负责空间曲线的规划 
+.SH "变量说明"
+.PP 
+.SS "pthread_mutex_t ecrt_mutex"
+
+.SS "pthread_mutex_t kin_mutex"
+
+.SS "\fBRBT::Rbt_Model\fP* kinematic"
+运动学模型对象 
+.SS "\fBRBT::Ethercat\fP* mini_ecrt"
+ethercat模型对象 
+.SS "pthread_cond_t traj_cond"
+
+.SS "pthread_mutex_t traj_mutex"
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 miniRBT 的 源代码自动生成\&.

@@ -1,0 +1,116 @@
+.TH "RBT::Interface" 3 "2023年 十月 24日 星期二" "Version 1.0.0" "miniRBT" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RBT::Interface \- communicate between front-end and back-end  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <mini_rbt\&.h>\fP
+.PP
+继承自 QObject \&.
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBInterface\fP ()"
+.br
+.ti -1c
+.RI "Q_INVOKABLE QList< double > \fBrbt_get_backend_data\fP ()"
+.br
+.RI "前端获取后端的数据（每个周期调用一次） "
+.ti -1c
+.RI "Q_INVOKABLE void \fBrbt_write_backend_data\fP (QList< double > _value)"
+.br
+.RI "前端向后端写数据 "
+.ti -1c
+.RI "Q_INVOKABLE void \fBmodify_traj_data\fP (bool _value)"
+.br
+.RI "\&.\&.\&. "
+.ti -1c
+.RI "Q_INVOKABLE void \fBrun_progress\fP ()"
+.br
+.RI "\&.\&.\&. "
+.ti -1c
+.RI "Q_INVOKABLE bool \fBrun_manual_operation\fP (size_t _joint_number, bool _isrun, bool _direction)"
+.br
+.RI "机械臂运行相关操作 "
+.ti -1c
+.RI "Q_INVOKABLE void \fBrun_suspend\fP ()"
+.br
+.RI "\&.\&.\&. "
+.ti -1c
+.RI "Q_INVOKABLE void \fBrbt_destroy_ui\fP ()"
+.br
+.RI "释放各个线程 "
+.ti -1c
+.RI "Q_INVOKABLE void \fBrbt_set_bool_value\fP (size_t _flag, bool _value)"
+.br
+.RI "设置后端的bool量 "
+.ti -1c
+.RI "Q_INVOKABLE QList< double > \fBrbt_touchget_backend_data\fP (size_t _flag)"
+.br
+.RI "通过按钮触发的方式获得后端的数据 "
+.in -1c
+.SS "Private 属性"
+
+.in +1c
+.ti -1c
+.RI "QList< double > \fBdata_list\fP"
+.br
+.in -1c
+.SH "详细描述"
+.PP 
+communicate between front-end and back-end 
+.SH "构造及析构函数说明"
+.PP 
+.SS "RBT::Interface::Interface ()\fC [explicit]\fP"
+
+.SH "成员函数说明"
+.PP 
+.SS "Q_INVOKABLE void RBT::Interface::modify_traj_data (bool _value)"
+
+.PP
+\&.\&.\&. 
+.SS "Q_INVOKABLE void RBT::Interface::rbt_destroy_ui ()"
+
+.PP
+释放各个线程 
+.SS "Q_INVOKABLE QList<double> RBT::Interface::rbt_get_backend_data ()"
+
+.PP
+前端获取后端的数据（每个周期调用一次） 
+.SS "Q_INVOKABLE void RBT::Interface::rbt_set_bool_value (size_t _flag, bool _value)"
+
+.PP
+设置后端的bool量 
+.SS "Q_INVOKABLE QList<double> RBT::Interface::rbt_touchget_backend_data (size_t _flag)"
+
+.PP
+通过按钮触发的方式获得后端的数据 
+.SS "Q_INVOKABLE void RBT::Interface::rbt_write_backend_data (QList< double > _value)"
+
+.PP
+前端向后端写数据 
+.SS "Q_INVOKABLE bool RBT::Interface::run_manual_operation (size_t _joint_number, bool _isrun, bool _direction)"
+
+.PP
+机械臂运行相关操作 
+.SS "Q_INVOKABLE void RBT::Interface::run_progress ()"
+
+.PP
+\&.\&.\&. 
+.SS "Q_INVOKABLE void RBT::Interface::run_suspend ()"
+
+.PP
+\&.\&.\&. 
+.SH "类成员变量说明"
+.PP 
+.SS "QList<double> RBT::Interface::data_list\fC [private]\fP"
+
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 miniRBT 的 源代码自动生成\&.

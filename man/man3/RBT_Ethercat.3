@@ -1,0 +1,213 @@
+.TH "RBT::Ethercat" 3 "2023年 十月 24日 星期二" "Version 1.0.0" "miniRBT" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RBT::Ethercat \- etherca主站类，包含ethercat主站设置操作和通信操作  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <rbt_ethercat\&.h>\fP
+.SS "Public 成员函数"
+
+.in +1c
+.ti -1c
+.RI "\fBEthercat\fP ()"
+.br
+.ti -1c
+.RI "bool \fBinit\fP ()"
+.br
+.RI "ethercat主站初始化 "
+.ti -1c
+.RI "void \fBecrt_task\fP ()"
+.br
+.RI "ethercat通信线程的主任务之一 "
+.ti -1c
+.RI "void \fBset_slave_home\fP (std::array< double, \fBSlave_Number\fP > _joint_home)"
+.br
+.RI "设置伺服驱动器的零位 "
+.in -1c
+.SS "Public 属性"
+
+.in +1c
+.ti -1c
+.RI "bool \fBmodify_error\fP {false}"
+.br
+.ti -1c
+.RI "bool \fBslave_virtual\fP {true}"
+.br
+.ti -1c
+.RI "std::array< double, \fBSlave_Number\fP > \fBtarget_position\fP"
+.br
+.ti -1c
+.RI "std::array< double, \fBSlave_Number\fP > \fBactual_position\fP"
+.br
+.ti -1c
+.RI "std::array< double, \fBSlave_Number\fP > \fBmotion_direction\fP"
+.br
+.ti -1c
+.RI "struct timespec \fBwakeupTime\fP"
+.br
+.ti -1c
+.RI "ec_master_t * \fBmaster\fP"
+.br
+.in -1c
+.SS "Private 成员函数"
+
+.in +1c
+.ti -1c
+.RI "void \fBcheck_domain_state\fP ()"
+.br
+.ti -1c
+.RI "void \fBcheck_master_state\fP ()"
+.br
+.ti -1c
+.RI "void \fBrbt_preprocess\fP ()"
+.br
+.in -1c
+.SS "Private 属性"
+
+.in +1c
+.ti -1c
+.RI "bool \fBslave_enabled\fP [\fBSlave_Number\fP]"
+.br
+.ti -1c
+.RI "double \fBslave_offset\fP [\fBSlave_Number\fP]"
+.br
+.ti -1c
+.RI "int32_t \fBtarget_pos\fP [\fBSlave_Number\fP]"
+.br
+.ti -1c
+.RI "int32_t \fBactual_pos\fP [\fBSlave_Number\fP]"
+.br
+.ti -1c
+.RI "int32_t \fBencoder_resolution\fP [\fBSlave_Number\fP]"
+.br
+.ti -1c
+.RI "int16_t \fBraw_value\fP [\fBSlave_Number\fP]"
+.br
+.ti -1c
+.RI "struct \fBrbt_pdo\fP \fBpdos\fP [\fBSlave_Number\fP]"
+.br
+.ti -1c
+.RI "ec_pdo_entry_reg_t \fBdomain_regs\fP [\fBSlave_Number\fP *4+1]"
+.br
+.ti -1c
+.RI "ec_pdo_entry_info_t \fBslave_pdo_entries\fP [4]"
+.br
+.ti -1c
+.RI "ec_pdo_info_t \fBslave_pdos\fP [2]"
+.br
+.ti -1c
+.RI "ec_sync_info_t \fBslave_syncs\fP [5]"
+.br
+.ti -1c
+.RI "double \fBoriginal_offset\fP [\fBSlave_Number\fP]"
+.br
+.ti -1c
+.RI "int \fBsync_ref_counter\fP = 0"
+.br
+.ti -1c
+.RI "struct timespec \fBtime\fP"
+.br
+.in -1c
+.SS "静态 Private 属性"
+
+.in +1c
+.ti -1c
+.RI "static ec_master_state_t \fBmaster_state\fP"
+.br
+.ti -1c
+.RI "static ec_domain_t * \fBdomain\fP"
+.br
+.ti -1c
+.RI "static ec_domain_state_t \fBdomain_state\fP"
+.br
+.ti -1c
+.RI "static uint8_t * \fBdomain_pd\fP"
+.br
+.in -1c
+.SH "详细描述"
+.PP 
+etherca主站类，包含ethercat主站设置操作和通信操作 
+.SH "构造及析构函数说明"
+.PP 
+.SS "RBT::Ethercat::Ethercat ()"
+
+.SH "成员函数说明"
+.PP 
+.SS "void RBT::Ethercat::check_domain_state ()\fC [private]\fP"
+
+.SS "void RBT::Ethercat::check_master_state ()\fC [private]\fP"
+
+.SS "void RBT::Ethercat::ecrt_task ()"
+
+.PP
+ethercat通信线程的主任务之一 
+.SS "bool RBT::Ethercat::init ()"
+
+.PP
+ethercat主站初始化 
+.SS "void RBT::Ethercat::rbt_preprocess ()\fC [private]\fP"
+
+.SS "void RBT::Ethercat::set_slave_home (std::array< double, \fBSlave_Number\fP > _joint_home)"
+
+.PP
+设置伺服驱动器的零位 
+.SH "类成员变量说明"
+.PP 
+.SS "int32_t RBT::Ethercat::actual_pos[\fBSlave_Number\fP]\fC [private]\fP"
+
+.SS "std::array<double,\fBSlave_Number\fP> RBT::Ethercat::actual_position"
+每周期的反馈位置，单位:deg 
+.SS "ec_domain_t* RBT::Ethercat::domain\fC [static]\fP, \fC [private]\fP"
+
+.SS "uint8_t* RBT::Ethercat::domain_pd\fC [static]\fP, \fC [private]\fP"
+
+.SS "ec_pdo_entry_reg_t RBT::Ethercat::domain_regs[\fBSlave_Number\fP *4+1]\fC [private]\fP"
+
+.SS "ec_domain_state_t RBT::Ethercat::domain_state\fC [static]\fP, \fC [private]\fP"
+
+.SS "int32_t RBT::Ethercat::encoder_resolution[\fBSlave_Number\fP]\fC [private]\fP"
+
+.SS "ec_master_t* RBT::Ethercat::master"
+ethercat主站，尽量不要改动 
+.SS "ec_master_state_t RBT::Ethercat::master_state\fC [static]\fP, \fC [private]\fP"
+
+.SS "bool RBT::Ethercat::modify_error {false}"
+清除伺服错误开关 
+.SS "std::array<double,\fBSlave_Number\fP> RBT::Ethercat::motion_direction"
+电机运行方向 
+.SS "double RBT::Ethercat::original_offset[\fBSlave_Number\fP]\fC [private]\fP"
+
+.SS "struct \fBrbt_pdo\fP RBT::Ethercat::pdos[\fBSlave_Number\fP]\fC [private]\fP"
+
+.SS "int16_t RBT::Ethercat::raw_value[\fBSlave_Number\fP]\fC [private]\fP"
+
+.SS "bool RBT::Ethercat::slave_enabled[\fBSlave_Number\fP]\fC [private]\fP"
+
+.SS "double RBT::Ethercat::slave_offset[\fBSlave_Number\fP]\fC [private]\fP"
+
+.SS "ec_pdo_entry_info_t RBT::Ethercat::slave_pdo_entries[4]\fC [private]\fP"
+
+.SS "ec_pdo_info_t RBT::Ethercat::slave_pdos[2]\fC [private]\fP"
+
+.SS "ec_sync_info_t RBT::Ethercat::slave_syncs[5]\fC [private]\fP"
+
+.SS "bool RBT::Ethercat::slave_virtual {true}"
+虚拟系统开关 
+.SS "int RBT::Ethercat::sync_ref_counter = 0\fC [private]\fP"
+
+.SS "int32_t RBT::Ethercat::target_pos[\fBSlave_Number\fP]\fC [private]\fP"
+
+.SS "std::array<double,\fBSlave_Number\fP> RBT::Ethercat::target_position"
+每周期的目标位置，单位:deg 
+.SS "struct timespec RBT::Ethercat::time\fC [private]\fP"
+
+.SS "struct timespec RBT::Ethercat::wakeupTime"
+每周期开始时刻，尽量不要改动 
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 miniRBT 的 源代码自动生成\&.

@@ -1,0 +1,337 @@
+.TH "include/rbt_variable.h" 3 "2023年 十月 24日 星期二" "Version 1.0.0" "miniRBT" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/rbt_variable.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <Eigen/Eigen>\fP
+.br
+\fC#include <errno\&.h>\fP
+.br
+\fC#include <signal\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <sys/resource\&.h>\fP
+.br
+\fC#include <QFile>\fP
+.br
+\fC#include <QDir>\fP
+.br
+\fC#include <QFileInfo>\fP
+.br
+\fC#include 'rbt_trajectory\&.h'\fP
+.br
+
+.SS "类"
+
+.in +1c
+.ti -1c
+.RI "class \fBFile_Process\fP"
+.br
+.in -1c
+.SS "宏定义"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSlave_Number\fP   6"
+.br
+.ti -1c
+.RI "#define \fBCLOCK_TO_USE\fP   CLOCK_MONOTONIC"
+.br
+.ti -1c
+.RI "#define \fBfrequency\fP   1000"
+.br
+.ti -1c
+.RI "#define \fBNSEC_PER_SEC\fP   (1000000000)"
+.br
+.ti -1c
+.RI "#define \fBPERIOD_NS\fP   (\fBNSEC_PER_SEC\fP/ \fBfrequency\fP)"
+.br
+.ti -1c
+.RI "#define \fBTIMESPEC2NS\fP(T)   ((uint64_t) (T)\&.tv_sec * \fBNSEC_PER_SEC\fP + (T)\&.tv_nsec)"
+.br
+.ti -1c
+.RI "#define \fBVID_PID\fP   0x5a65726f,0x00029252"
+.br
+.ti -1c
+.RI "#define \fBMY_STACK_SIZE\fP   8192"
+.br
+.ti -1c
+.RI "#define \fBeps\fP   0\&.0000001"
+.br
+.in -1c
+.SS "类型定义"
+
+.in +1c
+.ti -1c
+.RI "typedef Eigen::Matrix< double, \fBSlave_Number\fP, 1 > \fBVectorSdb\fP"
+.br
+.in -1c
+.SS "函数"
+
+.in +1c
+.ti -1c
+.RI "struct timespec \fBtimespec_add\fP (struct timespec time1, struct timespec time2)"
+.br
+.RI "时间的加法运算 "
+.in -1c
+.SS "变量"
+
+.in +1c
+.ti -1c
+.RI "bool \fBdestroy_thread\fP"
+.br
+.ti -1c
+.RI "bool \fBcurrent_work_space\fP"
+.br
+.ti -1c
+.RI "bool \fBrun_begin\fP"
+.br
+.ti -1c
+.RI "bool \fBvirtual_rbt\fP"
+.br
+.ti -1c
+.RI "bool \fBteach_guide\fP"
+.br
+.ti -1c
+.RI "bool \fBenable\fP"
+.br
+.ti -1c
+.RI "bool \fBenabled\fP"
+.br
+.ti -1c
+.RI "bool \fBmodify_slave_error\fP"
+.br
+.ti -1c
+.RI "bool \fBmotion_frame_type\fP"
+.br
+.ti -1c
+.RI "bool \fBtraj_finished\fP"
+.br
+.ti -1c
+.RI "bool \fBstopping\fP"
+.br
+.ti -1c
+.RI "std::array< double, \fBSlave_Number\fP > \fBjoint_pos_upper\fP"
+.br
+.ti -1c
+.RI "std::array< double, \fBSlave_Number\fP > \fBjoint_pos_lower\fP"
+.br
+.ti -1c
+.RI "std::array< double, \fBSlave_Number\fP > \fBjoint_vel_upper\fP"
+.br
+.ti -1c
+.RI "std::array< double, \fBSlave_Number\fP > \fBjoint_acc_upper\fP"
+.br
+.ti -1c
+.RI "std::array< double, \fBSlave_Number\fP > \fBjoint_jerk_upper\fP"
+.br
+.ti -1c
+.RI "std::array< double, \fBSlave_Number\fP > \fBcurrent_acc_joint\fP"
+.br
+.ti -1c
+.RI "std::array< double, \fBSlave_Number\fP > \fBcurrent_vel_joint\fP"
+.br
+.ti -1c
+.RI "std::array< double, \fBSlave_Number\fP > \fBtransmit_ratio\fP"
+.br
+.ti -1c
+.RI "std::array< double, \fBSlave_Number\fP > \fBcurrent_position_joint\fP"
+.br
+.ti -1c
+.RI "std::array< double, \fBSlave_Number\fP > \fBtarget_position_joint\fP"
+.br
+.ti -1c
+.RI "std::array< double, \fBSlave_Number\fP > \fBrbt_home\fP"
+.br
+.ti -1c
+.RI "std::array< double, 6 > \fBdescartes_pos_upper\fP"
+.br
+.ti -1c
+.RI "std::array< double, 6 > \fBdescartes_pos_lower\fP"
+.br
+.ti -1c
+.RI "std::array< double, 6 > \fBdescartes_vel_upper\fP"
+.br
+.ti -1c
+.RI "std::array< double, 6 > \fBdescartes_acc_upper\fP"
+.br
+.ti -1c
+.RI "std::array< double, 6 > \fBdescartes_jerk_upper\fP"
+.br
+.ti -1c
+.RI "std::array< double, 6 > \fBcurrent_acc_descartes\fP"
+.br
+.ti -1c
+.RI "std::array< double, 6 > \fBcurrent_vel_descartes\fP"
+.br
+.ti -1c
+.RI "std::array< double, 6 > \fBcurrent_pos_descartes\fP"
+.br
+.ti -1c
+.RI "size_t \fBtraj_queue_index\fP"
+.br
+.ti -1c
+.RI "std::vector< traj::Point > \fBpoint_list\fP"
+.br
+.ti -1c
+.RI "std::vector< traj::Error_Code > \fBrbt_error\fP"
+.br
+.ti -1c
+.RI "\fBFile_Process\fP \fBfile_process\fP"
+.br
+.ti -1c
+.RI "traj::Joint_Trajectory \fBjoint_traj\fP"
+.br
+.ti -1c
+.RI "traj::Rbt_Trajectory \fBdescartes_traj\fP"
+.br
+.ti -1c
+.RI "struct timespec \fBcycletime\fP"
+.br
+.ti -1c
+.RI "Eigen::Matrix4d \fBcurrent_tool_frame\fP"
+.br
+.ti -1c
+.RI "std::vector< enum traj::Error_Code > \fBerrorcode\fP"
+.br
+.ti -1c
+.RI "bool \fBkin_thread_work\fP"
+.br
+.ti -1c
+.RI "bool \fBtraj_thread_work\fP"
+.br
+.in -1c
+.SH "宏定义说明"
+.PP 
+.SS "#define CLOCK_TO_USE   CLOCK_MONOTONIC"
+
+.SS "#define eps   0\&.0000001"
+
+.SS "#define frequency   1000"
+
+.SS "#define MY_STACK_SIZE   8192"
+
+.SS "#define NSEC_PER_SEC   (1000000000)"
+
+.SS "#define PERIOD_NS   (\fBNSEC_PER_SEC\fP/ \fBfrequency\fP)"
+
+.SS "#define Slave_Number   6"
+
+.SS "#define TIMESPEC2NS(T)   ((uint64_t) (T)\&.tv_sec * \fBNSEC_PER_SEC\fP + (T)\&.tv_nsec)"
+
+.SS "#define VID_PID   0x5a65726f,0x00029252"
+
+.SH "类型定义说明"
+.PP 
+.SS "typedef Eigen::Matrix<double, \fBSlave_Number\fP, 1> \fBVectorSdb\fP"
+
+.SH "函数说明"
+.PP 
+.SS "struct timespec timespec_add (struct timespec time1, struct timespec time2)"
+
+.PP
+时间的加法运算 
+.PP
+\fB返回\fP
+.RS 4
+struct timespec 
+.RE
+.PP
+
+.SH "变量说明"
+.PP 
+.SS "std::array<double,6> current_acc_descartes"
+
+.SS "std::array<double,\fBSlave_Number\fP> current_acc_joint"
+
+.SS "std::array<double,6> current_pos_descartes"
+
+.SS "std::array<double,\fBSlave_Number\fP> current_position_joint"
+
+.SS "Eigen::Matrix4d current_tool_frame"
+当前使用的工具坐标系 
+.SS "std::array<double,6> current_vel_descartes"
+
+.SS "std::array<double,\fBSlave_Number\fP> current_vel_joint"
+
+.SS "bool current_work_space"
+
+.SS "struct timespec cycletime"
+每周期时间长度 
+.SS "std::array<double,6> descartes_acc_upper"
+
+.SS "std::array<double,6> descartes_jerk_upper"
+
+.SS "std::array<double,6> descartes_pos_lower"
+
+.SS "std::array<double,6> descartes_pos_upper"
+
+.SS "traj::Rbt_Trajectory descartes_traj"
+
+.SS "std::array<double,6> descartes_vel_upper"
+
+.SS "bool destroy_thread"
+
+.SS "bool enable"
+
+.SS "bool enabled"
+
+.SS "std::vector<enum traj::Error_Code> errorcode"
+
+.SS "\fBFile_Process\fP file_process"
+
+.SS "std::array<double,\fBSlave_Number\fP> joint_acc_upper"
+
+.SS "std::array<double,\fBSlave_Number\fP> joint_jerk_upper"
+
+.SS "std::array<double,\fBSlave_Number\fP> joint_pos_lower"
+
+.SS "std::array<double,\fBSlave_Number\fP> joint_pos_upper"
+
+.SS "traj::Joint_Trajectory joint_traj"
+
+.SS "std::array<double,\fBSlave_Number\fP> joint_vel_upper"
+
+.SS "bool kin_thread_work"
+运动学线程是否处于工作状态,true:工作中，false:睡眠中 
+.SS "bool modify_slave_error"
+
+.SS "bool motion_frame_type"
+
+.SS "std::vector<traj::Point> point_list"
+
+.SS "std::vector<traj::Error_Code> rbt_error"
+
+.SS "std::array<double,\fBSlave_Number\fP> rbt_home"
+
+.SS "bool run_begin"
+
+.SS "bool stopping"
+
+.SS "std::array<double,\fBSlave_Number\fP> target_position_joint"
+
+.SS "bool teach_guide"
+
+.SS "bool traj_finished"
+
+.SS "size_t traj_queue_index"
+
+.SS "bool traj_thread_work"
+规划线程是否处于工作状态,true:工作中，false:睡眠中 
+.SS "std::array<double,\fBSlave_Number\fP> transmit_ratio"
+
+.SS "bool virtual_rbt"
+
+.SH "作者"
+.PP 
+由 Doyxgen 通过分析 miniRBT 的 源代码自动生成\&.
