@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>miniRBT: include/rbt_variable.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="beetle.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">miniRBT
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+   <div id="projectbrief">一款简易版本的机械臂控制系统</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('rbt__variable_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">rbt_variable.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="rbt__variable_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef RBT_VARIABLE_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define RBT_VARIABLE_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include&lt;iostream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include&lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include&lt;math.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include&lt;Eigen/Eigen&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;errno.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;signal.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;sys/resource.h&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include&lt;QFile&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QDir&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include&lt;QFileInfo&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;rbt_trajectory.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">   18</a></span>&#160;<span class="preprocessor">#define Slave_Number 6                                                      </span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#a5a01bd1cd59441f2db054ad38728de54">   19</a></span>&#160;<span class="preprocessor">#define CLOCK_TO_USE CLOCK_MONOTONIC</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#a6556f9ceceffdd10267822cefcb49ea5">   20</a></span>&#160;<span class="preprocessor">#define frequency 1000</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#a0501e82515b2bdf36453c4cc80f5e0cc">   21</a></span>&#160;<span class="preprocessor">#define NSEC_PER_SEC (1000000000)</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#ab495f8313ac709722de636c17e8a7381">   22</a></span>&#160;<span class="preprocessor">#define PERIOD_NS (NSEC_PER_SEC/ frequency)    //本次设置周期PERIOD_NS为1ms</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#a0ca04ace3fdf9024f99a7e1c50bea258">   23</a></span>&#160;<span class="preprocessor">#define TIMESPEC2NS(T) ((uint64_t) (T).tv_sec * NSEC_PER_SEC + (T).tv_nsec)</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#ac8b5e7084866981c5a30d92a097d57c4">   24</a></span>&#160;<span class="preprocessor">#define VID_PID 0x5a65726f,0x00029252</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#ad411dcac8cd42bd8dd200489b2bba5b2">   25</a></span>&#160;<span class="preprocessor">#define MY_STACK_SIZE 8192</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#ab53328405fd9ba89990d9426d0e6389e">   26</a></span>&#160;<span class="preprocessor">#define eps 0.0000001</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#acbffb327ad807fc6adad5d093553bfb6">   28</a></span>&#160;<span class="keyword">typedef</span> Eigen::Matrix&lt;double, Slave_Number, 1&gt; <a class="code" href="rbt__variable_8h.html#acbffb327ad807fc6adad5d093553bfb6">VectorSdb</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_file___process.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_file___process.html">File_Process</a>{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="class_file___process.html#a090391b78c961e035ae68e6cc18d1549">File_Process</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_file___process.html#a59e62348e7dc9c7d484066a67f824a9f">   33</a></span>&#160;    <a class="code" href="class_file___process.html#a59e62348e7dc9c7d484066a67f824a9f">~File_Process</a>(){<span class="keyword">delete</span> this-&gt;<a class="code" href="class_file___process.html#a6636fd54a299feaea65cef1558e3c76d">qfile</a>;}</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_file___process.html#ac1724fbe49fc721a40fe6c6fe3f5924f">   34</a></span>&#160;    QString <a class="code" href="class_file___process.html#ac1724fbe49fc721a40fe6c6fe3f5924f">file_address</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_file___process.html#abc2f110aa93ba0a783a26b0e8a612673">open_file</a>(QString _file_name);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_file___process.html#af5459e237cf202efe6e3590bebe1cc67">rbt_init</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_file___process.html#a3435f4643c84bf2b678fd299f8c0de07">rbt_finish</a>();<span class="comment">//save data</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_file___process.html#a11e5444b5a881eaf41ef7072e14bd131">read_file</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_file___process.html#a0cec0d7baa02af2c1ed72b8bea68d6bd">write_file</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_file___process.html#a0ee84bb7f036691208aea488d7bda55f">analysis</a>(QString line_data);</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_file___process.html#a6636fd54a299feaea65cef1558e3c76d">   43</a></span>&#160;    QFile *<a class="code" href="class_file___process.html#a6636fd54a299feaea65cef1558e3c76d">qfile</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_file___process.html#adef521fe03847e5af0c14989fe8ec0db">   44</a></span>&#160;    QStringList <a class="code" href="class_file___process.html#adef521fe03847e5af0c14989fe8ec0db">file_name</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_file___process.html#a4706d56fc0f4ea57a97d8ffde5b783f5">   45</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="class_file___process.html#a4706d56fc0f4ea57a97d8ffde5b783f5">file_number</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_file___process.html#ae6f9818a1ed8241adad04ea9a1b0bf0f">   46</a></span>&#160;    QStringList <a class="code" href="class_file___process.html#ae6f9818a1ed8241adad04ea9a1b0bf0f">str_list_temp</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//------------------------------------fundamental global variable &amp; function -------------------------------------------</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">bool</span> <a class="code" href="rbt__variable_8h.html#a6fcd858daae208297885a77806ba14f5">destroy_thread</a>,         <span class="comment">/*&lt;! 释放线程(ecrt &amp; traj)信号,true:释放,此变量请勿更改*/</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#aea3a95808f91b6d446049d7da7c892b6">   51</a></span>&#160;            <a class="code" href="rbt__variable_8h.html#aea3a95808f91b6d446049d7da7c892b6">current_work_space</a>,     <span class="comment">/*&lt;! 当前系统所处的工作空间*/</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#a9d10bd05c9df7fc89ce4ba9cf51ac8a6">   52</a></span>&#160;            <a class="code" href="rbt__variable_8h.html#a9d10bd05c9df7fc89ce4ba9cf51ac8a6">run_begin</a>,              <span class="comment">/*&lt;! 程序运行开始信号*/</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#aaeca69ea579e5eea0479444743e2a2b8">   53</a></span>&#160;            <a class="code" href="rbt__variable_8h.html#aaeca69ea579e5eea0479444743e2a2b8">virtual_rbt</a>,            <span class="comment">/*&lt;! 虚拟仿真开关,true:虚拟运行模式,false:真机运行模式*/</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#a66d8a4985d1efcf5a89d5b7407ca8385">   54</a></span>&#160;            <a class="code" href="rbt__variable_8h.html#a66d8a4985d1efcf5a89d5b7407ca8385">teach_guide</a>,            <span class="comment">/*&lt;! 手动操作开关,true:手动示教信号,false:程序运行信号*/</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#ac842b6c1dcb3b1f11b611620199dc55c">   55</a></span>&#160;            <a class="code" href="rbt__variable_8h.html#ac842b6c1dcb3b1f11b611620199dc55c">enable</a>,                 <span class="comment">/*&lt;! 伺服使能开关,true: open slaves,false(default): close slaves */</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#a8740ba80e30dd75e71d09fa1dcf04f3d">   56</a></span>&#160;            <a class="code" href="rbt__variable_8h.html#a8740ba80e30dd75e71d09fa1dcf04f3d">enabled</a>,                <span class="comment">/*&lt;! 伺服使能状态,true: slaves opened,false(default): slaves closed */</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#ad1c86b3a00a997ffbc6fef5027a2ced4">   57</a></span>&#160;            <a class="code" href="rbt__variable_8h.html#ad1c86b3a00a997ffbc6fef5027a2ced4">modify_slave_error</a>,     <span class="comment">/*&lt;! 清除伺服错误开关*/</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#a3c867926e7f64472df4fb1f57f91f5f8">   58</a></span>&#160;            <a class="code" href="rbt__variable_8h.html#a3c867926e7f64472df4fb1f57f91f5f8">motion_frame_type</a>,</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#a76005827159605c78650675d83934141">   59</a></span>&#160;            <a class="code" href="rbt__variable_8h.html#a76005827159605c78650675d83934141">traj_finished</a>,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="rbt__variable_8h.html#aea3a95808f91b6d446049d7da7c892b6">current_work_space</a>,     <span class="comment">/*&lt;! 当前系统所处空间,true(default):关节空间坐标系,false:直角(笛卡尔)空间坐标系*/</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#a3065b71ea2455fb184ad978b7a8bd496">   61</a></span>&#160;            <a class="code" href="rbt__variable_8h.html#a3065b71ea2455fb184ad978b7a8bd496">stopping</a>;               <span class="comment">/*&lt;! 运动暂停信号,true:结束当前运行的插值过程，并从当前速度和加速度减速到0为止*/</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">extern</span> std::array&lt;double,Slave_Number&gt;  <a class="code" href="rbt__variable_8h.html#a517e2f887eaa22ab55512c08bb5dbb41">joint_pos_upper</a>,        <span class="comment">/*&lt;! 关节空间运动位置范围上限,单位：deg */</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#a6312fc226c8defc3a724eabbdebd39f3">   64</a></span>&#160;                                        <a class="code" href="rbt__variable_8h.html#a6312fc226c8defc3a724eabbdebd39f3">joint_pos_lower</a>,        <span class="comment">/*&lt;! 关节空间运动位置范围下限,单位：deg*/</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#af8335ad10a14078910b2c5383b26b34c">   65</a></span>&#160;                                        <a class="code" href="rbt__variable_8h.html#af8335ad10a14078910b2c5383b26b34c">joint_vel_upper</a>,        <span class="comment">/*&lt;! 关节速度上限，下限是该值对称,单位：deg/s */</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#a87d686a0a817f7e84a9070c79fce9337">   66</a></span>&#160;                                        <a class="code" href="rbt__variable_8h.html#a87d686a0a817f7e84a9070c79fce9337">joint_acc_upper</a>,        <span class="comment">/*&lt;! 关节加速度上限，下限是该值对称,单位：deg/s^2 */</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#a1ea3a481319d000ffa28a14c97511c47">   67</a></span>&#160;                                        <a class="code" href="rbt__variable_8h.html#a1ea3a481319d000ffa28a14c97511c47">joint_jerk_upper</a>,       <span class="comment">/*&lt;! 关节加加速度上限，下限是该值对称,单位：deg/s^3 */</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#ae6d00ff6fa5642f2c67cdcba415f897b">   68</a></span>&#160;                                        <a class="code" href="rbt__variable_8h.html#ae6d00ff6fa5642f2c67cdcba415f897b">current_acc_joint</a>,      <span class="comment">/*&lt;! 关节端的角度(返回值),单位：deg */</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#aee27e01feb7215a3d356907a105c7833">   69</a></span>&#160;                                        <a class="code" href="rbt__variable_8h.html#aee27e01feb7215a3d356907a105c7833">current_vel_joint</a>,</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#ae0dfbe614bcc640839ed27023968a28f">   70</a></span>&#160;                                        <a class="code" href="rbt__variable_8h.html#ae0dfbe614bcc640839ed27023968a28f">transmit_ratio</a>,         <span class="comment">/*&lt;! 减速比*/</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#aa5ba5b9089c90ecea54a2e2bbcf7b03c">   71</a></span>&#160;                                        <a class="code" href="rbt__variable_8h.html#aa5ba5b9089c90ecea54a2e2bbcf7b03c">current_position_joint</a>, <span class="comment">/*&lt;! 关节端的角度(返回值),单位：deg */</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#a0bae3ba73826d1b389cd51d416e95577">   72</a></span>&#160;                                        <a class="code" href="rbt__variable_8h.html#a0bae3ba73826d1b389cd51d416e95577">target_position_joint</a>,  <span class="comment">/*&lt;! 关节端的角度(期望值),单位：deg */</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#afb5a7fe50df009f06c2387eaa0335c43">   73</a></span>&#160;                                        <a class="code" href="rbt__variable_8h.html#afb5a7fe50df009f06c2387eaa0335c43">rbt_home</a>;               <span class="comment">/*&lt;! 模型的零位*/</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">extern</span> std::array&lt;double,6&gt; <a class="code" href="rbt__variable_8h.html#a740794f7b1d938a9456465cc778c8821">descartes_pos_upper</a>,    <span class="comment">/*&lt;! 直角(笛卡尔)空间运动位置范围上限 */</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#ab2ebbefe34b0699bbd674e2f59ee7e31">   76</a></span>&#160;                            <a class="code" href="rbt__variable_8h.html#ab2ebbefe34b0699bbd674e2f59ee7e31">descartes_pos_lower</a>,    <span class="comment">/*&lt;! 直角(笛卡尔)空间运动位置范围下限 */</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#a4139e39e88abf7f8b28166d5d48cf4e9">   77</a></span>&#160;                            <a class="code" href="rbt__variable_8h.html#a4139e39e88abf7f8b28166d5d48cf4e9">descartes_vel_upper</a>,    <span class="comment">/*&lt;! 直角(笛卡尔)空间运动速度范围上限 */</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#a5a7a606891985bbeee63f7823b0398da">   78</a></span>&#160;                            <a class="code" href="rbt__variable_8h.html#a5a7a606891985bbeee63f7823b0398da">descartes_acc_upper</a>,    <span class="comment">/*&lt;! 直角(笛卡尔)空间运动加速度范围上限 */</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#adab602403637e88919bea6e2fd0a7975">   79</a></span>&#160;                            <a class="code" href="rbt__variable_8h.html#adab602403637e88919bea6e2fd0a7975">descartes_jerk_upper</a>,   <span class="comment">/*&lt;! 直角(笛卡尔)空间运动加加速度范围上限 */</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#ad3d3606f2dc6d911c7190f738e8d46cb">   80</a></span>&#160;                            <a class="code" href="rbt__variable_8h.html#ad3d3606f2dc6d911c7190f738e8d46cb">current_acc_descartes</a>,  <span class="comment">/*&lt;! 当前直角(笛卡尔)空间运动加速度 */</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#a747e2898884a07706a134d9c04df3c5d">   81</a></span>&#160;                            <a class="code" href="rbt__variable_8h.html#a747e2898884a07706a134d9c04df3c5d">current_vel_descartes</a>,  <span class="comment">/*&lt;! 当前直角(笛卡尔)空间运动速度 */</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#a5508c31c065552f83b373bfd6d0e1910">   82</a></span>&#160;                            <a class="code" href="rbt__variable_8h.html#a5508c31c065552f83b373bfd6d0e1910">current_pos_descartes</a>;  <span class="comment">/*&lt;! 当前直角(笛卡尔)空间运动位置(Pos + Euler) */</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">size_t</span>                           <a class="code" href="rbt__variable_8h.html#abf531ad08930042ab24c749baf920296">traj_queue_index</a>;       <span class="comment">/*&lt;! 非手动操作状态下轨迹的索引号*/</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">extern</span> std::vector&lt;traj::Point&gt;         <a class="code" href="rbt__variable_8h.html#a750ab29e882bad36421f9d9135f16714">point_list</a>;             <span class="comment">/*&lt;! */</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">extern</span> std::vector&lt;traj::Error_Code&gt;    <a class="code" href="rbt__variable_8h.html#a16b3147f9587fcf5880ecd2d98b7733e">rbt_error</a>;              <span class="comment">/*&lt;! */</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">extern</span> <a class="code" href="class_file___process.html">File_Process</a>                     <a class="code" href="rbt__variable_8h.html#affab4eaade5c162f6b4b5ab839edf623">file_process</a>;           <span class="comment">/*&lt;! */</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">extern</span> traj::Joint_Trajectory           <a class="code" href="rbt__variable_8h.html#a192b25a56ea8d6d2ce068b0b9aa655de">joint_traj</a>;             <span class="comment">/*&lt;! 手动示教模式下关节空间规划对象*/</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">extern</span> traj::Rbt_Trajectory             <a class="code" href="rbt__variable_8h.html#a69e822eb5c8b8495b5d631a414e2ffd1">descartes_traj</a>;         <span class="comment">/*&lt;! 手动示教模式下笛卡尔空间规划对象*/</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">extern</span> <span class="keyword">struct </span>timespec                  <a class="code" href="rbt__variable_8h.html#ac156dc7d8f9e9ae177205684afca05d4">cycletime</a>;              </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">extern</span> Eigen::Matrix4d                  <a class="code" href="rbt__variable_8h.html#ae805d72510995bc184c0acdbc45ed70c">current_tool_frame</a>;     </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">extern</span> std::vector&lt;enum traj::Error_Code&gt; <a class="code" href="rbt__variable_8h.html#ae06aeaa18915555aefc1acafbc902a80">errorcode</a>;            <span class="comment">/*&lt;! 错误码*/</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">bool</span> <a class="code" href="rbt__variable_8h.html#a0cd350cfb05bca98145fc6aacf267b85">kin_thread_work</a>,    </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="rbt__variable_8h.html#a7b073865141520fc2d92d37feab63256">   95</a></span>&#160;            <a class="code" href="rbt__variable_8h.html#a7b073865141520fc2d92d37feab63256">traj_thread_work</a>;   </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">struct </span>timespec <a class="code" href="rbt__variable_8h.html#af38165367cb15a861318697b9cae5b53">timespec_add</a>(struct timespec time1,struct timespec time2);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif // RBT_VARIABLE_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_file___process_html_a11e5444b5a881eaf41ef7072e14bd131"><div class="ttname"><a href="class_file___process.html#a11e5444b5a881eaf41ef7072e14bd131">File_Process::read_file</a></div><div class="ttdeci">void read_file()</div></div>
+<div class="ttc" id="aclass_file___process_html_a4706d56fc0f4ea57a97d8ffde5b783f5"><div class="ttname"><a href="class_file___process.html#a4706d56fc0f4ea57a97d8ffde5b783f5">File_Process::file_number</a></div><div class="ttdeci">size_t file_number</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:45</div></div>
+<div class="ttc" id="arbt__variable_8h_html_af8335ad10a14078910b2c5383b26b34c"><div class="ttname"><a href="rbt__variable_8h.html#af8335ad10a14078910b2c5383b26b34c">joint_vel_upper</a></div><div class="ttdeci">std::array&lt; double, Slave_Number &gt; joint_vel_upper</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:65</div></div>
+<div class="ttc" id="aclass_file___process_html_ae6f9818a1ed8241adad04ea9a1b0bf0f"><div class="ttname"><a href="class_file___process.html#ae6f9818a1ed8241adad04ea9a1b0bf0f">File_Process::str_list_temp</a></div><div class="ttdeci">QStringList str_list_temp</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:46</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a740794f7b1d938a9456465cc778c8821"><div class="ttname"><a href="rbt__variable_8h.html#a740794f7b1d938a9456465cc778c8821">descartes_pos_upper</a></div><div class="ttdeci">std::array&lt; double, 6 &gt; descartes_pos_upper</div></div>
+<div class="ttc" id="arbt__variable_8h_html_ae6d00ff6fa5642f2c67cdcba415f897b"><div class="ttname"><a href="rbt__variable_8h.html#ae6d00ff6fa5642f2c67cdcba415f897b">current_acc_joint</a></div><div class="ttdeci">std::array&lt; double, Slave_Number &gt; current_acc_joint</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:68</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a750ab29e882bad36421f9d9135f16714"><div class="ttname"><a href="rbt__variable_8h.html#a750ab29e882bad36421f9d9135f16714">point_list</a></div><div class="ttdeci">std::vector&lt; traj::Point &gt; point_list</div></div>
+<div class="ttc" id="aclass_file___process_html_a6636fd54a299feaea65cef1558e3c76d"><div class="ttname"><a href="class_file___process.html#a6636fd54a299feaea65cef1558e3c76d">File_Process::qfile</a></div><div class="ttdeci">QFile * qfile</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:43</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a0bae3ba73826d1b389cd51d416e95577"><div class="ttname"><a href="rbt__variable_8h.html#a0bae3ba73826d1b389cd51d416e95577">target_position_joint</a></div><div class="ttdeci">std::array&lt; double, Slave_Number &gt; target_position_joint</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:72</div></div>
+<div class="ttc" id="arbt__variable_8h_html_affab4eaade5c162f6b4b5ab839edf623"><div class="ttname"><a href="rbt__variable_8h.html#affab4eaade5c162f6b4b5ab839edf623">file_process</a></div><div class="ttdeci">File_Process file_process</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a517e2f887eaa22ab55512c08bb5dbb41"><div class="ttname"><a href="rbt__variable_8h.html#a517e2f887eaa22ab55512c08bb5dbb41">joint_pos_upper</a></div><div class="ttdeci">std::array&lt; double, Slave_Number &gt; joint_pos_upper</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a87d686a0a817f7e84a9070c79fce9337"><div class="ttname"><a href="rbt__variable_8h.html#a87d686a0a817f7e84a9070c79fce9337">joint_acc_upper</a></div><div class="ttdeci">std::array&lt; double, Slave_Number &gt; joint_acc_upper</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:66</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a192b25a56ea8d6d2ce068b0b9aa655de"><div class="ttname"><a href="rbt__variable_8h.html#a192b25a56ea8d6d2ce068b0b9aa655de">joint_traj</a></div><div class="ttdeci">traj::Joint_Trajectory joint_traj</div></div>
+<div class="ttc" id="arbt__variable_8h_html_ac156dc7d8f9e9ae177205684afca05d4"><div class="ttname"><a href="rbt__variable_8h.html#ac156dc7d8f9e9ae177205684afca05d4">cycletime</a></div><div class="ttdeci">struct timespec cycletime</div></div>
+<div class="ttc" id="arbt__variable_8h_html_ae805d72510995bc184c0acdbc45ed70c"><div class="ttname"><a href="rbt__variable_8h.html#ae805d72510995bc184c0acdbc45ed70c">current_tool_frame</a></div><div class="ttdeci">Eigen::Matrix4d current_tool_frame</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a1ea3a481319d000ffa28a14c97511c47"><div class="ttname"><a href="rbt__variable_8h.html#a1ea3a481319d000ffa28a14c97511c47">joint_jerk_upper</a></div><div class="ttdeci">std::array&lt; double, Slave_Number &gt; joint_jerk_upper</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:67</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a4139e39e88abf7f8b28166d5d48cf4e9"><div class="ttname"><a href="rbt__variable_8h.html#a4139e39e88abf7f8b28166d5d48cf4e9">descartes_vel_upper</a></div><div class="ttdeci">std::array&lt; double, 6 &gt; descartes_vel_upper</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:77</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a76005827159605c78650675d83934141"><div class="ttname"><a href="rbt__variable_8h.html#a76005827159605c78650675d83934141">traj_finished</a></div><div class="ttdeci">bool traj_finished</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:59</div></div>
+<div class="ttc" id="aclass_file___process_html_ac1724fbe49fc721a40fe6c6fe3f5924f"><div class="ttname"><a href="class_file___process.html#ac1724fbe49fc721a40fe6c6fe3f5924f">File_Process::file_address</a></div><div class="ttdeci">QString file_address</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:34</div></div>
+<div class="ttc" id="arbt__variable_8h_html_ad1c86b3a00a997ffbc6fef5027a2ced4"><div class="ttname"><a href="rbt__variable_8h.html#ad1c86b3a00a997ffbc6fef5027a2ced4">modify_slave_error</a></div><div class="ttdeci">bool modify_slave_error</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:57</div></div>
+<div class="ttc" id="aclass_file___process_html"><div class="ttname"><a href="class_file___process.html">File_Process</a></div><div class="ttdef"><b>Definition:</b> rbt_variable.h:30</div></div>
+<div class="ttc" id="arbt__variable_8h_html_aaeca69ea579e5eea0479444743e2a2b8"><div class="ttname"><a href="rbt__variable_8h.html#aaeca69ea579e5eea0479444743e2a2b8">virtual_rbt</a></div><div class="ttdeci">bool virtual_rbt</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:53</div></div>
+<div class="ttc" id="aclass_file___process_html_a0cec0d7baa02af2c1ed72b8bea68d6bd"><div class="ttname"><a href="class_file___process.html#a0cec0d7baa02af2c1ed72b8bea68d6bd">File_Process::write_file</a></div><div class="ttdeci">void write_file()</div></div>
+<div class="ttc" id="arbt__variable_8h_html_adab602403637e88919bea6e2fd0a7975"><div class="ttname"><a href="rbt__variable_8h.html#adab602403637e88919bea6e2fd0a7975">descartes_jerk_upper</a></div><div class="ttdeci">std::array&lt; double, 6 &gt; descartes_jerk_upper</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:79</div></div>
+<div class="ttc" id="aclass_file___process_html_a0ee84bb7f036691208aea488d7bda55f"><div class="ttname"><a href="class_file___process.html#a0ee84bb7f036691208aea488d7bda55f">File_Process::analysis</a></div><div class="ttdeci">void analysis(QString line_data)</div></div>
+<div class="ttc" id="arbt__variable_8h_html_ac842b6c1dcb3b1f11b611620199dc55c"><div class="ttname"><a href="rbt__variable_8h.html#ac842b6c1dcb3b1f11b611620199dc55c">enable</a></div><div class="ttdeci">bool enable</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:55</div></div>
+<div class="ttc" id="aclass_file___process_html_adef521fe03847e5af0c14989fe8ec0db"><div class="ttname"><a href="class_file___process.html#adef521fe03847e5af0c14989fe8ec0db">File_Process::file_name</a></div><div class="ttdeci">QStringList file_name</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:44</div></div>
+<div class="ttc" id="arbt__variable_8h_html_ae06aeaa18915555aefc1acafbc902a80"><div class="ttname"><a href="rbt__variable_8h.html#ae06aeaa18915555aefc1acafbc902a80">errorcode</a></div><div class="ttdeci">std::vector&lt; enum traj::Error_Code &gt; errorcode</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a16b3147f9587fcf5880ecd2d98b7733e"><div class="ttname"><a href="rbt__variable_8h.html#a16b3147f9587fcf5880ecd2d98b7733e">rbt_error</a></div><div class="ttdeci">std::vector&lt; traj::Error_Code &gt; rbt_error</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a5a7a606891985bbeee63f7823b0398da"><div class="ttname"><a href="rbt__variable_8h.html#a5a7a606891985bbeee63f7823b0398da">descartes_acc_upper</a></div><div class="ttdeci">std::array&lt; double, 6 &gt; descartes_acc_upper</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:78</div></div>
+<div class="ttc" id="arbt__variable_8h_html_abf531ad08930042ab24c749baf920296"><div class="ttname"><a href="rbt__variable_8h.html#abf531ad08930042ab24c749baf920296">traj_queue_index</a></div><div class="ttdeci">size_t traj_queue_index</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a3c867926e7f64472df4fb1f57f91f5f8"><div class="ttname"><a href="rbt__variable_8h.html#a3c867926e7f64472df4fb1f57f91f5f8">motion_frame_type</a></div><div class="ttdeci">bool motion_frame_type</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:58</div></div>
+<div class="ttc" id="aclass_file___process_html_abc2f110aa93ba0a783a26b0e8a612673"><div class="ttname"><a href="class_file___process.html#abc2f110aa93ba0a783a26b0e8a612673">File_Process::open_file</a></div><div class="ttdeci">void open_file(QString _file_name)</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a6312fc226c8defc3a724eabbdebd39f3"><div class="ttname"><a href="rbt__variable_8h.html#a6312fc226c8defc3a724eabbdebd39f3">joint_pos_lower</a></div><div class="ttdeci">std::array&lt; double, Slave_Number &gt; joint_pos_lower</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:64</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a8740ba80e30dd75e71d09fa1dcf04f3d"><div class="ttname"><a href="rbt__variable_8h.html#a8740ba80e30dd75e71d09fa1dcf04f3d">enabled</a></div><div class="ttdeci">bool enabled</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:56</div></div>
+<div class="ttc" id="arbt__variable_8h_html_ae0dfbe614bcc640839ed27023968a28f"><div class="ttname"><a href="rbt__variable_8h.html#ae0dfbe614bcc640839ed27023968a28f">transmit_ratio</a></div><div class="ttdeci">std::array&lt; double, Slave_Number &gt; transmit_ratio</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:70</div></div>
+<div class="ttc" id="arbt__variable_8h_html_ad3d3606f2dc6d911c7190f738e8d46cb"><div class="ttname"><a href="rbt__variable_8h.html#ad3d3606f2dc6d911c7190f738e8d46cb">current_acc_descartes</a></div><div class="ttdeci">std::array&lt; double, 6 &gt; current_acc_descartes</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:80</div></div>
+<div class="ttc" id="aclass_file___process_html_a59e62348e7dc9c7d484066a67f824a9f"><div class="ttname"><a href="class_file___process.html#a59e62348e7dc9c7d484066a67f824a9f">File_Process::~File_Process</a></div><div class="ttdeci">~File_Process()</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:33</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a747e2898884a07706a134d9c04df3c5d"><div class="ttname"><a href="rbt__variable_8h.html#a747e2898884a07706a134d9c04df3c5d">current_vel_descartes</a></div><div class="ttdeci">std::array&lt; double, 6 &gt; current_vel_descartes</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:81</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a9d10bd05c9df7fc89ce4ba9cf51ac8a6"><div class="ttname"><a href="rbt__variable_8h.html#a9d10bd05c9df7fc89ce4ba9cf51ac8a6">run_begin</a></div><div class="ttdeci">bool run_begin</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:52</div></div>
+<div class="ttc" id="arbt__variable_8h_html_aee27e01feb7215a3d356907a105c7833"><div class="ttname"><a href="rbt__variable_8h.html#aee27e01feb7215a3d356907a105c7833">current_vel_joint</a></div><div class="ttdeci">std::array&lt; double, Slave_Number &gt; current_vel_joint</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:69</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a66d8a4985d1efcf5a89d5b7407ca8385"><div class="ttname"><a href="rbt__variable_8h.html#a66d8a4985d1efcf5a89d5b7407ca8385">teach_guide</a></div><div class="ttdeci">bool teach_guide</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:54</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a3065b71ea2455fb184ad978b7a8bd496"><div class="ttname"><a href="rbt__variable_8h.html#a3065b71ea2455fb184ad978b7a8bd496">stopping</a></div><div class="ttdeci">bool stopping</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:61</div></div>
+<div class="ttc" id="aclass_file___process_html_a090391b78c961e035ae68e6cc18d1549"><div class="ttname"><a href="class_file___process.html#a090391b78c961e035ae68e6cc18d1549">File_Process::File_Process</a></div><div class="ttdeci">File_Process()</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a69e822eb5c8b8495b5d631a414e2ffd1"><div class="ttname"><a href="rbt__variable_8h.html#a69e822eb5c8b8495b5d631a414e2ffd1">descartes_traj</a></div><div class="ttdeci">traj::Rbt_Trajectory descartes_traj</div></div>
+<div class="ttc" id="arbt__variable_8h_html_acbffb327ad807fc6adad5d093553bfb6"><div class="ttname"><a href="rbt__variable_8h.html#acbffb327ad807fc6adad5d093553bfb6">VectorSdb</a></div><div class="ttdeci">Eigen::Matrix&lt; double, Slave_Number, 1 &gt; VectorSdb</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:28</div></div>
+<div class="ttc" id="aclass_file___process_html_a3435f4643c84bf2b678fd299f8c0de07"><div class="ttname"><a href="class_file___process.html#a3435f4643c84bf2b678fd299f8c0de07">File_Process::rbt_finish</a></div><div class="ttdeci">void rbt_finish()</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a0cd350cfb05bca98145fc6aacf267b85"><div class="ttname"><a href="rbt__variable_8h.html#a0cd350cfb05bca98145fc6aacf267b85">kin_thread_work</a></div><div class="ttdeci">bool kin_thread_work</div></div>
+<div class="ttc" id="arbt__variable_8h_html_afb5a7fe50df009f06c2387eaa0335c43"><div class="ttname"><a href="rbt__variable_8h.html#afb5a7fe50df009f06c2387eaa0335c43">rbt_home</a></div><div class="ttdeci">std::array&lt; double, Slave_Number &gt; rbt_home</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:73</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a5508c31c065552f83b373bfd6d0e1910"><div class="ttname"><a href="rbt__variable_8h.html#a5508c31c065552f83b373bfd6d0e1910">current_pos_descartes</a></div><div class="ttdeci">std::array&lt; double, 6 &gt; current_pos_descartes</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:82</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a7b073865141520fc2d92d37feab63256"><div class="ttname"><a href="rbt__variable_8h.html#a7b073865141520fc2d92d37feab63256">traj_thread_work</a></div><div class="ttdeci">bool traj_thread_work</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:95</div></div>
+<div class="ttc" id="arbt__variable_8h_html_af38165367cb15a861318697b9cae5b53"><div class="ttname"><a href="rbt__variable_8h.html#af38165367cb15a861318697b9cae5b53">timespec_add</a></div><div class="ttdeci">struct timespec timespec_add(struct timespec time1, struct timespec time2)</div><div class="ttdoc">时间的加法运算</div></div>
+<div class="ttc" id="arbt__variable_8h_html_a6fcd858daae208297885a77806ba14f5"><div class="ttname"><a href="rbt__variable_8h.html#a6fcd858daae208297885a77806ba14f5">destroy_thread</a></div><div class="ttdeci">bool destroy_thread</div></div>
+<div class="ttc" id="arbt__variable_8h_html_aa5ba5b9089c90ecea54a2e2bbcf7b03c"><div class="ttname"><a href="rbt__variable_8h.html#aa5ba5b9089c90ecea54a2e2bbcf7b03c">current_position_joint</a></div><div class="ttdeci">std::array&lt; double, Slave_Number &gt; current_position_joint</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:71</div></div>
+<div class="ttc" id="arbt__variable_8h_html_aea3a95808f91b6d446049d7da7c892b6"><div class="ttname"><a href="rbt__variable_8h.html#aea3a95808f91b6d446049d7da7c892b6">current_work_space</a></div><div class="ttdeci">bool current_work_space</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:51</div></div>
+<div class="ttc" id="aclass_file___process_html_af5459e237cf202efe6e3590bebe1cc67"><div class="ttname"><a href="class_file___process.html#af5459e237cf202efe6e3590bebe1cc67">File_Process::rbt_init</a></div><div class="ttdeci">void rbt_init()</div></div>
+<div class="ttc" id="arbt__variable_8h_html_ab2ebbefe34b0699bbd674e2f59ee7e31"><div class="ttname"><a href="rbt__variable_8h.html#ab2ebbefe34b0699bbd674e2f59ee7e31">descartes_pos_lower</a></div><div class="ttdeci">std::array&lt; double, 6 &gt; descartes_pos_lower</div><div class="ttdef"><b>Definition:</b> rbt_variable.h:76</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="rbt__variable_8h.html">rbt_variable.h</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

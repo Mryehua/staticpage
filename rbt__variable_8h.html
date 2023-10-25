@@ -1,0 +1,1023 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>miniRBT: include/rbt_variable.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="beetle.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">miniRBT
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+   <div id="projectbrief">一款简易版本的机械臂控制系统</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('rbt__variable_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">rbt_variable.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;Eigen/Eigen&gt;</code><br />
+<code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;signal.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;sys/resource.h&gt;</code><br />
+<code>#include &lt;QFile&gt;</code><br />
+<code>#include &lt;QDir&gt;</code><br />
+<code>#include &lt;QFileInfo&gt;</code><br />
+<code>#include &quot;rbt_trajectory.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+rbt_variable.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rbt__variable_8h__incl.png" border="0" usemap="#include_2rbt__variable_8h" alt=""/></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="rbt__variable_8h__dep__incl.png" border="0" usemap="#include_2rbt__variable_8hdep" alt=""/></div>
+</div>
+</div>
+<p><a href="rbt__variable_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file___process.html">File_Process</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a86484fe000a74195908b97300f250223"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:a86484fe000a74195908b97300f250223"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a01bd1cd59441f2db054ad38728de54"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a5a01bd1cd59441f2db054ad38728de54">CLOCK_TO_USE</a>&#160;&#160;&#160;CLOCK_MONOTONIC</td></tr>
+<tr class="separator:a5a01bd1cd59441f2db054ad38728de54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6556f9ceceffdd10267822cefcb49ea5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a6556f9ceceffdd10267822cefcb49ea5">frequency</a>&#160;&#160;&#160;1000</td></tr>
+<tr class="separator:a6556f9ceceffdd10267822cefcb49ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0501e82515b2bdf36453c4cc80f5e0cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a0501e82515b2bdf36453c4cc80f5e0cc">NSEC_PER_SEC</a>&#160;&#160;&#160;(1000000000)</td></tr>
+<tr class="separator:a0501e82515b2bdf36453c4cc80f5e0cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab495f8313ac709722de636c17e8a7381"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#ab495f8313ac709722de636c17e8a7381">PERIOD_NS</a>&#160;&#160;&#160;(<a class="el" href="rbt__variable_8h.html#a0501e82515b2bdf36453c4cc80f5e0cc">NSEC_PER_SEC</a>/ <a class="el" href="rbt__variable_8h.html#a6556f9ceceffdd10267822cefcb49ea5">frequency</a>)</td></tr>
+<tr class="separator:ab495f8313ac709722de636c17e8a7381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ca04ace3fdf9024f99a7e1c50bea258"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a0ca04ace3fdf9024f99a7e1c50bea258">TIMESPEC2NS</a>(T)&#160;&#160;&#160;((uint64_t) (T).tv_sec * <a class="el" href="rbt__variable_8h.html#a0501e82515b2bdf36453c4cc80f5e0cc">NSEC_PER_SEC</a> + (T).tv_nsec)</td></tr>
+<tr class="separator:a0ca04ace3fdf9024f99a7e1c50bea258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8b5e7084866981c5a30d92a097d57c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#ac8b5e7084866981c5a30d92a097d57c4">VID_PID</a>&#160;&#160;&#160;0x5a65726f,0x00029252</td></tr>
+<tr class="separator:ac8b5e7084866981c5a30d92a097d57c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad411dcac8cd42bd8dd200489b2bba5b2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#ad411dcac8cd42bd8dd200489b2bba5b2">MY_STACK_SIZE</a>&#160;&#160;&#160;8192</td></tr>
+<tr class="separator:ad411dcac8cd42bd8dd200489b2bba5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab53328405fd9ba89990d9426d0e6389e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#ab53328405fd9ba89990d9426d0e6389e">eps</a>&#160;&#160;&#160;0.0000001</td></tr>
+<tr class="separator:ab53328405fd9ba89990d9426d0e6389e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:acbffb327ad807fc6adad5d093553bfb6"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Matrix&lt; double, <a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#acbffb327ad807fc6adad5d093553bfb6">VectorSdb</a></td></tr>
+<tr class="separator:acbffb327ad807fc6adad5d093553bfb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:af38165367cb15a861318697b9cae5b53"><td class="memItemLeft" align="right" valign="top">struct timespec&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#af38165367cb15a861318697b9cae5b53">timespec_add</a> (struct timespec time1, struct timespec time2)</td></tr>
+<tr class="memdesc:af38165367cb15a861318697b9cae5b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">时间的加法运算  <a href="rbt__variable_8h.html#af38165367cb15a861318697b9cae5b53">更多...</a><br /></td></tr>
+<tr class="separator:af38165367cb15a861318697b9cae5b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a6fcd858daae208297885a77806ba14f5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a6fcd858daae208297885a77806ba14f5">destroy_thread</a></td></tr>
+<tr class="separator:a6fcd858daae208297885a77806ba14f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea3a95808f91b6d446049d7da7c892b6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#aea3a95808f91b6d446049d7da7c892b6">current_work_space</a></td></tr>
+<tr class="separator:aea3a95808f91b6d446049d7da7c892b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d10bd05c9df7fc89ce4ba9cf51ac8a6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a9d10bd05c9df7fc89ce4ba9cf51ac8a6">run_begin</a></td></tr>
+<tr class="separator:a9d10bd05c9df7fc89ce4ba9cf51ac8a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeca69ea579e5eea0479444743e2a2b8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#aaeca69ea579e5eea0479444743e2a2b8">virtual_rbt</a></td></tr>
+<tr class="separator:aaeca69ea579e5eea0479444743e2a2b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66d8a4985d1efcf5a89d5b7407ca8385"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a66d8a4985d1efcf5a89d5b7407ca8385">teach_guide</a></td></tr>
+<tr class="separator:a66d8a4985d1efcf5a89d5b7407ca8385"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac842b6c1dcb3b1f11b611620199dc55c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#ac842b6c1dcb3b1f11b611620199dc55c">enable</a></td></tr>
+<tr class="separator:ac842b6c1dcb3b1f11b611620199dc55c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8740ba80e30dd75e71d09fa1dcf04f3d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a8740ba80e30dd75e71d09fa1dcf04f3d">enabled</a></td></tr>
+<tr class="separator:a8740ba80e30dd75e71d09fa1dcf04f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1c86b3a00a997ffbc6fef5027a2ced4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#ad1c86b3a00a997ffbc6fef5027a2ced4">modify_slave_error</a></td></tr>
+<tr class="separator:ad1c86b3a00a997ffbc6fef5027a2ced4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c867926e7f64472df4fb1f57f91f5f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a3c867926e7f64472df4fb1f57f91f5f8">motion_frame_type</a></td></tr>
+<tr class="separator:a3c867926e7f64472df4fb1f57f91f5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76005827159605c78650675d83934141"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a76005827159605c78650675d83934141">traj_finished</a></td></tr>
+<tr class="separator:a76005827159605c78650675d83934141"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3065b71ea2455fb184ad978b7a8bd496"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a3065b71ea2455fb184ad978b7a8bd496">stopping</a></td></tr>
+<tr class="separator:a3065b71ea2455fb184ad978b7a8bd496"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a517e2f887eaa22ab55512c08bb5dbb41"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, <a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a517e2f887eaa22ab55512c08bb5dbb41">joint_pos_upper</a></td></tr>
+<tr class="separator:a517e2f887eaa22ab55512c08bb5dbb41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6312fc226c8defc3a724eabbdebd39f3"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, <a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a6312fc226c8defc3a724eabbdebd39f3">joint_pos_lower</a></td></tr>
+<tr class="separator:a6312fc226c8defc3a724eabbdebd39f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8335ad10a14078910b2c5383b26b34c"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, <a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#af8335ad10a14078910b2c5383b26b34c">joint_vel_upper</a></td></tr>
+<tr class="separator:af8335ad10a14078910b2c5383b26b34c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87d686a0a817f7e84a9070c79fce9337"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, <a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a87d686a0a817f7e84a9070c79fce9337">joint_acc_upper</a></td></tr>
+<tr class="separator:a87d686a0a817f7e84a9070c79fce9337"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ea3a481319d000ffa28a14c97511c47"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, <a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a1ea3a481319d000ffa28a14c97511c47">joint_jerk_upper</a></td></tr>
+<tr class="separator:a1ea3a481319d000ffa28a14c97511c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6d00ff6fa5642f2c67cdcba415f897b"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, <a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#ae6d00ff6fa5642f2c67cdcba415f897b">current_acc_joint</a></td></tr>
+<tr class="separator:ae6d00ff6fa5642f2c67cdcba415f897b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee27e01feb7215a3d356907a105c7833"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, <a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#aee27e01feb7215a3d356907a105c7833">current_vel_joint</a></td></tr>
+<tr class="separator:aee27e01feb7215a3d356907a105c7833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0dfbe614bcc640839ed27023968a28f"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, <a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#ae0dfbe614bcc640839ed27023968a28f">transmit_ratio</a></td></tr>
+<tr class="separator:ae0dfbe614bcc640839ed27023968a28f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5ba5b9089c90ecea54a2e2bbcf7b03c"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, <a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#aa5ba5b9089c90ecea54a2e2bbcf7b03c">current_position_joint</a></td></tr>
+<tr class="separator:aa5ba5b9089c90ecea54a2e2bbcf7b03c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bae3ba73826d1b389cd51d416e95577"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, <a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a0bae3ba73826d1b389cd51d416e95577">target_position_joint</a></td></tr>
+<tr class="separator:a0bae3ba73826d1b389cd51d416e95577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb5a7fe50df009f06c2387eaa0335c43"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, <a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#afb5a7fe50df009f06c2387eaa0335c43">rbt_home</a></td></tr>
+<tr class="separator:afb5a7fe50df009f06c2387eaa0335c43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a740794f7b1d938a9456465cc778c8821"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a740794f7b1d938a9456465cc778c8821">descartes_pos_upper</a></td></tr>
+<tr class="separator:a740794f7b1d938a9456465cc778c8821"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2ebbefe34b0699bbd674e2f59ee7e31"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#ab2ebbefe34b0699bbd674e2f59ee7e31">descartes_pos_lower</a></td></tr>
+<tr class="separator:ab2ebbefe34b0699bbd674e2f59ee7e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4139e39e88abf7f8b28166d5d48cf4e9"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a4139e39e88abf7f8b28166d5d48cf4e9">descartes_vel_upper</a></td></tr>
+<tr class="separator:a4139e39e88abf7f8b28166d5d48cf4e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a7a606891985bbeee63f7823b0398da"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a5a7a606891985bbeee63f7823b0398da">descartes_acc_upper</a></td></tr>
+<tr class="separator:a5a7a606891985bbeee63f7823b0398da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adab602403637e88919bea6e2fd0a7975"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#adab602403637e88919bea6e2fd0a7975">descartes_jerk_upper</a></td></tr>
+<tr class="separator:adab602403637e88919bea6e2fd0a7975"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3d3606f2dc6d911c7190f738e8d46cb"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#ad3d3606f2dc6d911c7190f738e8d46cb">current_acc_descartes</a></td></tr>
+<tr class="separator:ad3d3606f2dc6d911c7190f738e8d46cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a747e2898884a07706a134d9c04df3c5d"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a747e2898884a07706a134d9c04df3c5d">current_vel_descartes</a></td></tr>
+<tr class="separator:a747e2898884a07706a134d9c04df3c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5508c31c065552f83b373bfd6d0e1910"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a5508c31c065552f83b373bfd6d0e1910">current_pos_descartes</a></td></tr>
+<tr class="separator:a5508c31c065552f83b373bfd6d0e1910"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf531ad08930042ab24c749baf920296"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#abf531ad08930042ab24c749baf920296">traj_queue_index</a></td></tr>
+<tr class="separator:abf531ad08930042ab24c749baf920296"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a750ab29e882bad36421f9d9135f16714"><td class="memItemLeft" align="right" valign="top">std::vector&lt; traj::Point &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a750ab29e882bad36421f9d9135f16714">point_list</a></td></tr>
+<tr class="separator:a750ab29e882bad36421f9d9135f16714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16b3147f9587fcf5880ecd2d98b7733e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; traj::Error_Code &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a16b3147f9587fcf5880ecd2d98b7733e">rbt_error</a></td></tr>
+<tr class="separator:a16b3147f9587fcf5880ecd2d98b7733e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affab4eaade5c162f6b4b5ab839edf623"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_file___process.html">File_Process</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#affab4eaade5c162f6b4b5ab839edf623">file_process</a></td></tr>
+<tr class="separator:affab4eaade5c162f6b4b5ab839edf623"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a192b25a56ea8d6d2ce068b0b9aa655de"><td class="memItemLeft" align="right" valign="top">traj::Joint_Trajectory&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a192b25a56ea8d6d2ce068b0b9aa655de">joint_traj</a></td></tr>
+<tr class="separator:a192b25a56ea8d6d2ce068b0b9aa655de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69e822eb5c8b8495b5d631a414e2ffd1"><td class="memItemLeft" align="right" valign="top">traj::Rbt_Trajectory&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a69e822eb5c8b8495b5d631a414e2ffd1">descartes_traj</a></td></tr>
+<tr class="separator:a69e822eb5c8b8495b5d631a414e2ffd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac156dc7d8f9e9ae177205684afca05d4"><td class="memItemLeft" align="right" valign="top">struct timespec&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#ac156dc7d8f9e9ae177205684afca05d4">cycletime</a></td></tr>
+<tr class="separator:ac156dc7d8f9e9ae177205684afca05d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae805d72510995bc184c0acdbc45ed70c"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix4d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#ae805d72510995bc184c0acdbc45ed70c">current_tool_frame</a></td></tr>
+<tr class="separator:ae805d72510995bc184c0acdbc45ed70c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae06aeaa18915555aefc1acafbc902a80"><td class="memItemLeft" align="right" valign="top">std::vector&lt; enum traj::Error_Code &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#ae06aeaa18915555aefc1acafbc902a80">errorcode</a></td></tr>
+<tr class="separator:ae06aeaa18915555aefc1acafbc902a80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cd350cfb05bca98145fc6aacf267b85"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a0cd350cfb05bca98145fc6aacf267b85">kin_thread_work</a></td></tr>
+<tr class="separator:a0cd350cfb05bca98145fc6aacf267b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b073865141520fc2d92d37feab63256"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbt__variable_8h.html#a7b073865141520fc2d92d37feab63256">traj_thread_work</a></td></tr>
+<tr class="separator:a7b073865141520fc2d92d37feab63256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a5a01bd1cd59441f2db054ad38728de54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a01bd1cd59441f2db054ad38728de54">&#9670;&nbsp;</a></span>CLOCK_TO_USE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLOCK_TO_USE&#160;&#160;&#160;CLOCK_MONOTONIC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab53328405fd9ba89990d9426d0e6389e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab53328405fd9ba89990d9426d0e6389e">&#9670;&nbsp;</a></span>eps</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define eps&#160;&#160;&#160;0.0000001</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6556f9ceceffdd10267822cefcb49ea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6556f9ceceffdd10267822cefcb49ea5">&#9670;&nbsp;</a></span>frequency</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define frequency&#160;&#160;&#160;1000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad411dcac8cd42bd8dd200489b2bba5b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad411dcac8cd42bd8dd200489b2bba5b2">&#9670;&nbsp;</a></span>MY_STACK_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_STACK_SIZE&#160;&#160;&#160;8192</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0501e82515b2bdf36453c4cc80f5e0cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0501e82515b2bdf36453c4cc80f5e0cc">&#9670;&nbsp;</a></span>NSEC_PER_SEC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NSEC_PER_SEC&#160;&#160;&#160;(1000000000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab495f8313ac709722de636c17e8a7381"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab495f8313ac709722de636c17e8a7381">&#9670;&nbsp;</a></span>PERIOD_NS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PERIOD_NS&#160;&#160;&#160;(<a class="el" href="rbt__variable_8h.html#a0501e82515b2bdf36453c4cc80f5e0cc">NSEC_PER_SEC</a>/ <a class="el" href="rbt__variable_8h.html#a6556f9ceceffdd10267822cefcb49ea5">frequency</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a86484fe000a74195908b97300f250223"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86484fe000a74195908b97300f250223">&#9670;&nbsp;</a></span>Slave_Number</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Slave_Number&#160;&#160;&#160;6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ca04ace3fdf9024f99a7e1c50bea258"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ca04ace3fdf9024f99a7e1c50bea258">&#9670;&nbsp;</a></span>TIMESPEC2NS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIMESPEC2NS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">T</td><td>)</td>
+          <td>&#160;&#160;&#160;((uint64_t) (T).tv_sec * <a class="el" href="rbt__variable_8h.html#a0501e82515b2bdf36453c4cc80f5e0cc">NSEC_PER_SEC</a> + (T).tv_nsec)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac8b5e7084866981c5a30d92a097d57c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8b5e7084866981c5a30d92a097d57c4">&#9670;&nbsp;</a></span>VID_PID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VID_PID&#160;&#160;&#160;0x5a65726f,0x00029252</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="acbffb327ad807fc6adad5d093553bfb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbffb327ad807fc6adad5d093553bfb6">&#9670;&nbsp;</a></span>VectorSdb</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Eigen::Matrix&lt;double, <a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a>, 1&gt; <a class="el" href="rbt__variable_8h.html#acbffb327ad807fc6adad5d093553bfb6">VectorSdb</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="af38165367cb15a861318697b9cae5b53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af38165367cb15a861318697b9cae5b53">&#9670;&nbsp;</a></span>timespec_add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct timespec timespec_add </td>
+          <td>(</td>
+          <td class="paramtype">struct timespec&#160;</td>
+          <td class="paramname"><em>time1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct timespec&#160;</td>
+          <td class="paramname"><em>time2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>时间的加法运算 </p>
+<dl class="section return"><dt>返回</dt><dd>struct timespec </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="ad3d3606f2dc6d911c7190f738e8d46cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3d3606f2dc6d911c7190f738e8d46cb">&#9670;&nbsp;</a></span>current_acc_descartes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;double,6&gt; current_acc_descartes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae6d00ff6fa5642f2c67cdcba415f897b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6d00ff6fa5642f2c67cdcba415f897b">&#9670;&nbsp;</a></span>current_acc_joint</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;double,<a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a>&gt; current_acc_joint</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5508c31c065552f83b373bfd6d0e1910"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5508c31c065552f83b373bfd6d0e1910">&#9670;&nbsp;</a></span>current_pos_descartes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;double,6&gt; current_pos_descartes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa5ba5b9089c90ecea54a2e2bbcf7b03c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5ba5b9089c90ecea54a2e2bbcf7b03c">&#9670;&nbsp;</a></span>current_position_joint</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;double,<a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a>&gt; current_position_joint</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae805d72510995bc184c0acdbc45ed70c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae805d72510995bc184c0acdbc45ed70c">&#9670;&nbsp;</a></span>current_tool_frame</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Matrix4d current_tool_frame</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>当前使用的工具坐标系 </p>
+
+</div>
+</div>
+<a id="a747e2898884a07706a134d9c04df3c5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a747e2898884a07706a134d9c04df3c5d">&#9670;&nbsp;</a></span>current_vel_descartes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;double,6&gt; current_vel_descartes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aee27e01feb7215a3d356907a105c7833"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee27e01feb7215a3d356907a105c7833">&#9670;&nbsp;</a></span>current_vel_joint</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;double,<a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a>&gt; current_vel_joint</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea3a95808f91b6d446049d7da7c892b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea3a95808f91b6d446049d7da7c892b6">&#9670;&nbsp;</a></span>current_work_space</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool current_work_space</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac156dc7d8f9e9ae177205684afca05d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac156dc7d8f9e9ae177205684afca05d4">&#9670;&nbsp;</a></span>cycletime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct timespec cycletime</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>每周期时间长度 </p>
+
+</div>
+</div>
+<a id="a5a7a606891985bbeee63f7823b0398da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a7a606891985bbeee63f7823b0398da">&#9670;&nbsp;</a></span>descartes_acc_upper</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;double,6&gt; descartes_acc_upper</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adab602403637e88919bea6e2fd0a7975"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adab602403637e88919bea6e2fd0a7975">&#9670;&nbsp;</a></span>descartes_jerk_upper</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;double,6&gt; descartes_jerk_upper</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab2ebbefe34b0699bbd674e2f59ee7e31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2ebbefe34b0699bbd674e2f59ee7e31">&#9670;&nbsp;</a></span>descartes_pos_lower</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;double,6&gt; descartes_pos_lower</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a740794f7b1d938a9456465cc778c8821"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a740794f7b1d938a9456465cc778c8821">&#9670;&nbsp;</a></span>descartes_pos_upper</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;double,6&gt; descartes_pos_upper</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a69e822eb5c8b8495b5d631a414e2ffd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69e822eb5c8b8495b5d631a414e2ffd1">&#9670;&nbsp;</a></span>descartes_traj</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">traj::Rbt_Trajectory descartes_traj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4139e39e88abf7f8b28166d5d48cf4e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4139e39e88abf7f8b28166d5d48cf4e9">&#9670;&nbsp;</a></span>descartes_vel_upper</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;double,6&gt; descartes_vel_upper</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6fcd858daae208297885a77806ba14f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fcd858daae208297885a77806ba14f5">&#9670;&nbsp;</a></span>destroy_thread</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool destroy_thread</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac842b6c1dcb3b1f11b611620199dc55c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac842b6c1dcb3b1f11b611620199dc55c">&#9670;&nbsp;</a></span>enable</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool enable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8740ba80e30dd75e71d09fa1dcf04f3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8740ba80e30dd75e71d09fa1dcf04f3d">&#9670;&nbsp;</a></span>enabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool enabled</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae06aeaa18915555aefc1acafbc902a80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae06aeaa18915555aefc1acafbc902a80">&#9670;&nbsp;</a></span>errorcode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;enum traj::Error_Code&gt; errorcode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="affab4eaade5c162f6b4b5ab839edf623"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affab4eaade5c162f6b4b5ab839edf623">&#9670;&nbsp;</a></span>file_process</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_file___process.html">File_Process</a> file_process</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a87d686a0a817f7e84a9070c79fce9337"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87d686a0a817f7e84a9070c79fce9337">&#9670;&nbsp;</a></span>joint_acc_upper</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;double,<a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a>&gt; joint_acc_upper</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ea3a481319d000ffa28a14c97511c47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ea3a481319d000ffa28a14c97511c47">&#9670;&nbsp;</a></span>joint_jerk_upper</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;double,<a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a>&gt; joint_jerk_upper</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6312fc226c8defc3a724eabbdebd39f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6312fc226c8defc3a724eabbdebd39f3">&#9670;&nbsp;</a></span>joint_pos_lower</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;double,<a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a>&gt; joint_pos_lower</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a517e2f887eaa22ab55512c08bb5dbb41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a517e2f887eaa22ab55512c08bb5dbb41">&#9670;&nbsp;</a></span>joint_pos_upper</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;double,<a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a>&gt; joint_pos_upper</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a192b25a56ea8d6d2ce068b0b9aa655de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a192b25a56ea8d6d2ce068b0b9aa655de">&#9670;&nbsp;</a></span>joint_traj</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">traj::Joint_Trajectory joint_traj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af8335ad10a14078910b2c5383b26b34c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8335ad10a14078910b2c5383b26b34c">&#9670;&nbsp;</a></span>joint_vel_upper</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;double,<a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a>&gt; joint_vel_upper</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0cd350cfb05bca98145fc6aacf267b85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cd350cfb05bca98145fc6aacf267b85">&#9670;&nbsp;</a></span>kin_thread_work</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool kin_thread_work</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>运动学线程是否处于工作状态,true:工作中，false:睡眠中 </p>
+
+</div>
+</div>
+<a id="ad1c86b3a00a997ffbc6fef5027a2ced4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1c86b3a00a997ffbc6fef5027a2ced4">&#9670;&nbsp;</a></span>modify_slave_error</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool modify_slave_error</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3c867926e7f64472df4fb1f57f91f5f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c867926e7f64472df4fb1f57f91f5f8">&#9670;&nbsp;</a></span>motion_frame_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool motion_frame_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a750ab29e882bad36421f9d9135f16714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a750ab29e882bad36421f9d9135f16714">&#9670;&nbsp;</a></span>point_list</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;traj::Point&gt; point_list</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a16b3147f9587fcf5880ecd2d98b7733e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16b3147f9587fcf5880ecd2d98b7733e">&#9670;&nbsp;</a></span>rbt_error</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;traj::Error_Code&gt; rbt_error</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afb5a7fe50df009f06c2387eaa0335c43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb5a7fe50df009f06c2387eaa0335c43">&#9670;&nbsp;</a></span>rbt_home</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;double,<a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a>&gt; rbt_home</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d10bd05c9df7fc89ce4ba9cf51ac8a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d10bd05c9df7fc89ce4ba9cf51ac8a6">&#9670;&nbsp;</a></span>run_begin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool run_begin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3065b71ea2455fb184ad978b7a8bd496"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3065b71ea2455fb184ad978b7a8bd496">&#9670;&nbsp;</a></span>stopping</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool stopping</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0bae3ba73826d1b389cd51d416e95577"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bae3ba73826d1b389cd51d416e95577">&#9670;&nbsp;</a></span>target_position_joint</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;double,<a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a>&gt; target_position_joint</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a66d8a4985d1efcf5a89d5b7407ca8385"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66d8a4985d1efcf5a89d5b7407ca8385">&#9670;&nbsp;</a></span>teach_guide</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool teach_guide</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a76005827159605c78650675d83934141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76005827159605c78650675d83934141">&#9670;&nbsp;</a></span>traj_finished</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool traj_finished</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abf531ad08930042ab24c749baf920296"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf531ad08930042ab24c749baf920296">&#9670;&nbsp;</a></span>traj_queue_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t traj_queue_index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b073865141520fc2d92d37feab63256"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b073865141520fc2d92d37feab63256">&#9670;&nbsp;</a></span>traj_thread_work</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool traj_thread_work</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>规划线程是否处于工作状态,true:工作中，false:睡眠中 </p>
+
+</div>
+</div>
+<a id="ae0dfbe614bcc640839ed27023968a28f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0dfbe614bcc640839ed27023968a28f">&#9670;&nbsp;</a></span>transmit_ratio</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;double,<a class="el" href="rbt__variable_8h.html#a86484fe000a74195908b97300f250223">Slave_Number</a>&gt; transmit_ratio</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaeca69ea579e5eea0479444743e2a2b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeca69ea579e5eea0479444743e2a2b8">&#9670;&nbsp;</a></span>virtual_rbt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool virtual_rbt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="rbt__variable_8h.html">rbt_variable.h</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>
